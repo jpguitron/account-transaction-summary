@@ -9,4 +9,4 @@ COPY /src/. /app
 RUN pip install -r requirements.txt
 
 #Start the application
-CMD python /main.py
+CMD python /app/main.py
