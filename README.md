@@ -25,7 +25,7 @@ Windows
 docker run -v %cd%/data:/app/data -e USER_ID=1 {image_id}
 Linux/OSX
 docker run -v $(pwd)/data:/app/data -e USER_ID=1 {image_id}
-**For mounting data folder in OSX the path of data folder should be added to Preferences -> Resources -> File Sharing -> +**
+For mounting data folder in OSX the path of data folder should be added to Preferences -> Resources -> File Sharing -> +
 ```
 User_id is the id of the user you want to process, the USER_ID should exist in the csv file, in the demo files the USER_ID 1,2 and 3 exist.
 {image_id} should be changed to the image id that got created.
