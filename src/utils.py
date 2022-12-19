@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 #Get debit average from a dataframe
 def calculate_debit(df):
@@ -25,6 +26,14 @@ def calculate_monthly_transactions(df):
 def filter_by_client(df,USER_ID):
     return df[df['User_id'] == int(USER_ID)].reset_index()
 
+def create_required_folders():
+    email_folder = "/app/data/email"
+    db_folder = "/app/data/db"
+
+    if not os.path.exists(email_folder):
+        os.makedirs(email_folder)
+    if not os.path.exists(db_folder):
+        os.makedirs(db_folder)
 
 #Main function for reading and processing csv file
 def process_file(df):
