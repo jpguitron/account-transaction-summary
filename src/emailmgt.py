@@ -22,7 +22,7 @@ def get_monthly_summary(monthly_transactions):
     return summary
 
 def send_email(email):
-    print("Saving email...",end='')
+    print("Sending email...",end='')
     file = open('/app/data/email/email.html', 'w')
     file.write(email)
     file.close()
