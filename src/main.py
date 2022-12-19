@@ -1,4 +1,4 @@
-from utils import process_file, filter_by_client
+from utils import process_file, filter_by_client, create_required_folders
 from emailmgt import generate_email
 from sqlitemgt import save_txns, save_users, setup_db
 import os
@@ -19,6 +19,8 @@ if __name__ == "__main__":
         users_df = pd.read_csv(users_file)
         users_df = filter_by_client(users_df,USER_ID)
         print("Done")
+
+        create_required_folders()
 
         #Process data
         if len(users_df)>0 and len(txns_df)>0:
