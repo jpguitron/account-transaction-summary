@@ -22,14 +22,14 @@ def calculate_monthly_transactions(df):
 
     return df.groupby(df.index.month).agg({'Transaction': [('transactions_n', 'count'), ('avg_debit', avg_debit_lambda), ('avg_credit', avg_credit_lambda)]}).reset_index()
 
+def filter_by_client(df,USER_ID):
+    return df[df['User_id'] == int(USER_ID)].reset_index()
+
+
 #Main function for reading and processing csv file
-def process_file(file_name):
-    
-    print("Processing transactions...",end='')
-    df = pd.read_csv(file_name)
-    print("Done")
-    
-    print("Processing transactions...",end='')
+def process_file(df):
+
+    print("Processing transactions...", end="")
     balance = calculate_balance(df)
     avg_credit = calculate_credit(df)
     avg_debit = calculate_debit(df)

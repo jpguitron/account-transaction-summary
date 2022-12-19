@@ -1,3 +1,5 @@
+import shutil
+
 def get_monthly_summary(monthly_transactions):
 
     months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
@@ -27,8 +29,10 @@ def send_email(email):
     print('done')
 
 def generate_email(balance, avg_credit, avg_debit, monthly_transactions):
-    
+
     print("Generating email...",end='')
+
+    shutil.copyfile("/app/templates/stori.png", "/app/data/email/stori.png")
 
     #Reading the html base template
     f = open("/app/templates/base_email.html", "r")
